@@ -95,8 +95,8 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Working on Blacklist file: &quot;+ in_BlackListFileName]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[LuxuryDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[in_Config(&quot;SurveyLuxurySheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyLuxuryFileName]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[PremiumDT]" DisplayName="Read Trade DT" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_Config(&quot;SurveyPremiumSheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyPremiumFileName]">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[LuxuryDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" PreserveFormat="True" SheetName="[in_Config(&quot;SurveyLuxurySheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyLuxuryFileName]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[PremiumDT]" DisplayName="Read Trade DT" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" PreserveFormat="True" SheetName="[in_Config(&quot;SurveyPremiumSheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyPremiumFileName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -104,7 +104,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[mheDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="[in_Config(&quot;SurveyMHESheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyMHEFileName]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[mheDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" PreserveFormat="True" SheetName="[in_Config(&quot;SurveyMHESheetName&quot;).ToString]" WorkbookPath="[&quot;Data\Temp\&quot;+in_SurveyMHEFileName]" />
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_4">
