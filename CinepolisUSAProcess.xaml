@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1377</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>664,1377</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CinepolisArgentina_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="60">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -92,6 +92,7 @@
       <Variable x:TypeArguments="x:String" Name="directorioFileName" />
       <Variable x:TypeArguments="x:String" Name="surveyMHEFileName" />
       <Variable x:TypeArguments="x:String" Name="MHEBDFileName" />
+      <Variable x:TypeArguments="x:String" Name="correctionFileName" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -114,7 +115,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,93 300,144.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Initial" sap:VirtualizedContainerService.HintSize="404,1125" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Initial" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,16 +234,39 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadFTPFileToLocal workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="FTPAutomation\DownloadFTPFileToLocal.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[config]</InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_BlackListFileName">[blackListFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_InputFileName">[inputFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_DirectorioClaves">[directorioFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyMHEFileName">[surveyMHEFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyoPremiumFileName">[surveyPremiumFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyLuxuryFileName">[surveyLuxuryFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_LuxuryBDFileName">[LuxuryBDFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_PremiumBDFileName">[premiumBDFileName]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_MHEBDFileName">[MHEBDFileName]</OutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+              </InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_BlackListFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="blackListFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_InputFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="inputFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_DirectorioClaves">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="directorioFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyMHEFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="surveyMHEFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyoPremiumFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="surveyPremiumFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_SurveyLuxuryFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="surveyLuxuryFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_LuxuryBDFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="LuxuryBDFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_PremiumBDFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="premiumBDFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_MHEBDFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="MHEBDFileName" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_CorrectionFileName">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="correctionFileName" />
+              </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -311,15 +335,32 @@
                               <av:PointCollection x:Key="ConnectorLocation">300,655.5 300,706.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke StandardiseInputData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ManipulateInputFile\StandardiseInputData.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke StandardiseInputData workflow" sap:VirtualizedContainerService.HintSize="360,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ManipulateInputFile\StandardiseInputData.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[config]</InArgument>
-                              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_InputDataTable">[inputDataTable]</InOutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_InputFileName">[inputFileName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_InputSheetName">[config("InputSheetName").ToString]</InArgument>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_BlackListDT">[blackListDatatable]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_DirectrioFileName">[directorioFileName]</InArgument>
-                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_InputDataExist">[inputDataExistFlag]</OutArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+                              </InArgument>
+                              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_InputDataTable">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="inputDataTable" />
+                              </InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_InputFileName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inputFileName" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_InputSheetName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;InputSheetName&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_BlackListDT">
+                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="blackListDatatable" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_DirectrioFileName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="directorioFileName" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_InputDataExist">
+                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="inputDataExistFlag" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CorrectionFileName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="correctionFileName" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
