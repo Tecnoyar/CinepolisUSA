@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1144,5929</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1144,7248</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>StandardiseInputData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -88,7 +88,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StandardiseInputData" sap:VirtualizedContainerService.HintSize="1154,5864" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="StandardiseInputData" sap:VirtualizedContainerService.HintSize="1154,7183" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="directrioDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="BDTradDT" />
@@ -103,21 +103,21 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Working on input file&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Working on input file: &quot;+in_InputFileName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope- Read input file" sap:VirtualizedContainerService.HintSize="1112,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[&quot;Data\Input\&quot;+in_InputFileName]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope- Read input file" sap:VirtualizedContainerService.HintSize="1112,1203" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[&quot;Data\Input\&quot;+in_InputFileName]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1102" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1094" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,24 +180,42 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ExcelWriteCell>
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_InputDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[in_InputSheetName]">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_InputDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[in_InputSheetName]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelReadRange>
+                </Sequence>
+              </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:ExcelReadRange>
+            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_InputDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1112,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="[in_InputSheetName]" WorkbookPath="[&quot;Data\Input\&quot;+in_InputFileName]" />
     <If Condition="[out_InputDataTable.Rows.Count&gt;1]" sap:VirtualizedContainerService.HintSize="1112,5590" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -579,22 +597,12 @@ Select ds =dr.ItemArray
                 </ui:LogMessage>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendGmail workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Mail\SendGmail.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_To">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MailTo&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DataNoBelongToCurrentWeekMailSubject&quot;).ToString" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_Config("MailTo").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DataNoBelongToCurrentWeekMailSubject").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_CC" />
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DataNoBelongToCurrentWeekMailBody&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Attachment">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="directory.GetCurrentDirectory+&quot;\Data\Temp\NonWeekData&quot;+datetime.Today.ToString(&quot;dd_MM_yyyy&quot;)+&quot;.csv&quot;" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">[in_Config("DataNoBelongToCurrentWeekMailBody").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Attachment">[directory.GetCurrentDirectory+"\Data\Temp\NonWeekData"+datetime.Today.ToString("dd_MM_yyyy")+".csv"]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
