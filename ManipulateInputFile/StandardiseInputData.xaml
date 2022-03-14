@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1144,5135</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1144,4552</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>StandardiseInputData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -85,10 +85,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StandardiseInputData" sap:VirtualizedContainerService.HintSize="1154,5070" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="StandardiseInputData" sap:VirtualizedContainerService.HintSize="1154,4487" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="directrioDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="BDTradDT" />
@@ -103,10 +102,10 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Working on input file: &quot;+in_InputFileName]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Working on input file: &quot;+in_InputFileName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -215,8 +214,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_InputDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1112,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="[in_InputSheetName]" WorkbookPath="[&quot;Data\Input\&quot;+in_InputFileName]" />
-    <If Condition="[out_InputDataTable.Rows.Count&gt;1]" sap:VirtualizedContainerService.HintSize="1112,4629" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_InputDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1112,51" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="[in_InputSheetName]" WorkbookPath="[&quot;Data\Input\&quot;+in_InputFileName]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <If Condition="[out_InputDataTable.Rows.Count&gt;1]" sap:VirtualizedContainerService.HintSize="1112,4122" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,7 +230,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="805,4471" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap:VirtualizedContainerService.HintSize="805,3964" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="BDATMDT" />
             <Variable x:TypeArguments="scg:List(x:String)" Name="blacklistEmailsList" />
@@ -234,7 +240,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Total input rows: &quot;+out_InputDataTable.Rows.Count.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,51" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Total input rows: &quot;+out_InputDataTable.Rows.Count.ToString]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
           <Assign sap:VirtualizedContainerService.HintSize="763,60" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_inputDataExist]</OutArgument>
@@ -290,7 +303,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
           </Sequence>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_InputDataTable]" DisplayName="Datetime and Name standard" sap:VirtualizedContainerService.HintSize="763,478" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_InputDataTable]" DisplayName="Datetime and Name standard" sap:VirtualizedContainerService.HintSize="763,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -396,7 +409,7 @@
             </ui:ForEachRow.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -663,10 +676,10 @@ Select ds =dr.ItemArray
               <Throw DisplayName="Throw- no data found" Exception="[New BusinessRuleException(&quot;No data for this week in excel file, please check the input file, accepted input file format is 'MM/dd/YYYY', if you want to change the format please contact developer.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </If.Else>
           </If>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Removing empty emails&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Removing empty emails&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -693,6 +706,14 @@ Select ds =dr.ItemArray
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FilterDataTable>
+          <Assign DisplayName="Remove duplicate CORREO" sap:VirtualizedContainerService.HintSize="763,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[out_InputDataTable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[out_InputDataTable.AsEnumerable().GroupBy(Function(a) a.Field(Of String)("OrderH_strEmail").ToLower.Trim).Select(Function(b) b.First).CopyToDataTable()]</InArgument>
+            </Assign.Value>
+          </Assign>
           <ui:InvokeCode ContinueOnError="{x:Null}" Code="var rand = new Random();&#xA;dataTable = dataTable.AsEnumerable().OrderBy(r =&gt; rand.Next()).CopyToDataTable();" DisplayName="Invoke code to randomize data rows" sap:VirtualizedContainerService.HintSize="763,51" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
             <ui:InvokeCode.Arguments>
               <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dataTable">[out_InputDataTable]</InOutArgument>
@@ -704,14 +725,6 @@ Select ds =dr.ItemArray
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeCode>
-          <Assign DisplayName="Remove duplicate CORREO" sap:VirtualizedContainerService.HintSize="763,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-            <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[out_InputDataTable]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[out_InputDataTable.AsEnumerable().GroupBy(Function(a) a.Field(Of String)("OrderH_strEmail").ToLower.Trim).Select(Function(b) b.First).CopyToDataTable()]</InArgument>
-            </Assign.Value>
-          </Assign>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Input after removing duplicate emails: &quot;+out_InputDataTable.Rows.Count.ToString]" />
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Removing blacklist data&quot;]">
             <sap:WorkflowViewStateService.ViewState>
@@ -740,7 +753,7 @@ Select ds =dr.ItemArray
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="763,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Inputs after removing blacklist emails: &quot;+out_InputDataTable.Rows.Count.ToString]" />
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="763,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="452,242" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
